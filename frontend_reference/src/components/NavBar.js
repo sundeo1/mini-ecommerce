@@ -1,13 +1,12 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
-  const router = useRouter();
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <Link href="/">
-          <a className="navbar-brand">Shop</a>
+        <Link className="navbar-brand" to="/">
+          Shop
         </Link>
         <button
           className="navbar-toggler"
@@ -22,26 +21,12 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <Link href="/">
-              <a
-                className={
-                  router.pathname === "/" ? "nav-link active" : "nav-link"
-                }
-              >
-                Home
-              </a>
-            </Link>
-            <Link href="/checkout">
-              <a
-                className={
-                  router.pathname === "/checkout"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Checkout
-              </a>
-            </Link>
+            <NavLink className="nav-link " exact to="/">
+              Home
+            </NavLink>
+            <NavLink className="nav-link " to="/checkout">
+              Checkout
+            </NavLink>
           </div>
         </div>
       </div>

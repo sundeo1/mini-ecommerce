@@ -49,7 +49,7 @@ const Checkout = () => {
           config
         );
 
-        if (res.status == 200) {
+        if (res.status === 200) {
           setClientToken(res.data.token);
           setLoading(false);
           setProcessingOrder(false);

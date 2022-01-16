@@ -1,17 +1,18 @@
-import Head from "next/head";
+import React, { Fragment } from "react";
+import { Helmet } from "react-helmet";
 import NavBar from "../components/NavBar";
 
-const layout = ({ title, content, children }) => {
+const Layout = ({ title, content, children }) => {
   return (
-    <>
-      <Head>
+    <Fragment>
+      <Helmet>
         <title>Shop | {title}</title>
         <meta name="description" content={content} />
-      </Head>
+      </Helmet>
       <NavBar />
       <div className="container">{children}</div>
-    </>
+    </Fragment>
   );
 };
 
-export default layout;
+export default Layout;
